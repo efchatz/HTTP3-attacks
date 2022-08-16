@@ -16,6 +16,8 @@ For the exploitation of these attacks, the Ubuntu 18.04 client was used, with th
 
 Change the URL parameter to the one of the target. Note that based on the capabilities of the targeted server, different values maybe needed for each parameter on the exploits.
 
+**Based on the work: Chatzoglou.E, Kouliaridis V., Kambourakis G., Karopoulos G., and Gritzalis S.**, ["Revisiting QUIC attacks: A comprehensive review on QUIC security and a hands-on study"](https://doi.org/10.48550/arXiv.2208.06722) **in arXiv, doi:10.48550/arXiv.2208.06722**.
+
 ====================================================
 
 MIT License
