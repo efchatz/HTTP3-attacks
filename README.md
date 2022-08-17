@@ -16,6 +16,19 @@ For the exploitation of these attacks, the Ubuntu 18.04 client was used, with th
 
 Change the URL parameter to the one of the target. Note that based on the capabilities of the targeted server, different values maybe needed for each parameter on the exploits.
 
+The following instructions occur the curl installation, for the HTTP-flooding assault.
+
+1. add Dockerfile to a dir
+2. add exploit to the same dir, in our case the http-flood.sh file
+3. Change the URL parameter in the exploit to the one of the target
+4. docker build -t curl-http3 .
+5. docker run -t -d --network host curl-http3
+6. docker ps
+7. docker cp /hostfile  (container_id):/(to_the_place_you_want_the_file_to_be)
+8. docker exec -it container-id-curl-http3 bash
+
+After the bash connection to the docker, execute ./http-flood.sh.
+
 **Based on the work: Chatzoglou.E, Kouliaridis V., Kambourakis G., Karopoulos G., and Gritzalis S.**, ["A hands-on gaze on HTTP/3 security through the lens of HTTP/2 and a public dataset"](https://doi.org/10.48550/arXiv.2208.06722) **in arXiv, doi:10.48550/arXiv.2208.06722**.
 
 ====================================================
