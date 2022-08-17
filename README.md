@@ -18,8 +18,8 @@ Change the URL parameter to the one of the target. Note that based on the capabi
 
 The following instructions occur the curl installation, for the HTTP-flooding assault.
 
-1. add Dockerfile to a dir
-2. add exploit to the same dir, in our case the http-flood.sh file
+1. Add Dockerfile to a dir. The Dockerfile is inside the http-flood dir of the repository.
+2. Add exploit to the same dir, in our case the http-flood.sh file
 3. Change the URL parameter in the exploit to the one of the target
 4. docker build -t curl-http3 .
 5. docker run -t -d --network host curl-http3
