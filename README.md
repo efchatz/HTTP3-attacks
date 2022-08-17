@@ -8,11 +8,12 @@ For the exploitation of these attacks, the Ubuntu 18.04 client was used, with th
 1. git clone https://github.com/aiortc/aioquic
 2. sudo apt install libssl-dev
 3. cd aioquic
-4. pip install -e .
-5. pip install asgiref dnslib httpbin starlette wsproto
-6. python3 setup.py install
-7. add the http-loris.sh file to the aioquic dir
-8. initite the attack
+4. If executing the HTTP-stream attack, alter the MAX_TABLE_CAPACITY in aioquic library value to 16 or lower.
+5. pip install -e .
+6. pip install asgiref dnslib httpbin starlette wsproto
+7. python3 setup.py install
+8. Add the http-loris.sh file to the aioquic dir
+9. Initite the attack
 
 Change the URL parameter to the one of the target. Note that based on the capabilities of the targeted server, different values maybe needed for each parameter on the exploits.
 
