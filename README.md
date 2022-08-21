@@ -3,24 +3,24 @@
 The current repository serves the purpose of sharing the scripts we used for educational usage. These attacks were a part of our study, and were tested against 6 different QUIC-enabled servers (IIS, NGINX, LiteSpeed, Cloudflare, H2O, and Caddy). The http-stream script is the exploit of the [CVE-2022-30592](https://nvd.nist.gov/vuln/detail/CVE-2022-30592) issue that affected lsquic library. This script can also be exploited against Litespeed server.
 
 ## Installation procedure
-For the exploitation of these attacks, the Ubuntu 18.04 client was used, with the assist of aioquic Python library for HTTP-loris and HTTP-stream. For HTTP-flooding attack, the curl tool was used, with support of HTTP/3. The following instructions occur the aioquic installation, for the HTTP-loris and HTTP-stream assaults.
+For the exploitation of these attacks, the Ubuntu 18.04 client was used, with the assist of aioquic Python library for HTTP3-loris and HTTP3-stream. For HTTP3-flooding attack, the curl tool was used, with support of HTTP/3. The following instructions occur the aioquic installation, for the HTTP3-loris and HTTP3-stream assaults.
 
 1. git clone https://github.com/aiortc/aioquic
 2. sudo apt install libssl-dev
 3. cd aioquic
-4. If executing the HTTP-stream attack, alter the MAX_TABLE_CAPACITY in aioquic library value to 16 or lower.
+4. If executing the HTTP3-stream attack, alter the MAX_TABLE_CAPACITY in aioquic library value to 16 or lower.
 5. pip install -e .
 6. pip install asgiref dnslib httpbin starlette wsproto
 7. python3 setup.py install
-8. Add the http-loris.sh file to the aioquic dir
+8. Add the http3-loris.sh file to the aioquic dir
 9. Initite the attack
 
 Change the URL parameter to the one of the target. Note that based on the capabilities of the targeted server, different values maybe needed for each parameter on the exploits.
 
-The following instructions occur the curl installation, for the HTTP-flooding assault.
+The following instructions occur the curl installation, for the HTTP3-flooding assault.
 
 1. Add Dockerfile to a dir. The Dockerfile is inside the http-flood dir of the repository.
-2. Add exploit to the same dir, in our case the http-flood.sh file
+2. Add exploit to the same dir, in our case the http3-flood.sh file
 3. Change the URL parameter in the exploit to the one of the target
 4. docker build -t curl-http3 .
 5. docker run -t -d --network host curl-http3
@@ -28,7 +28,7 @@ The following instructions occur the curl installation, for the HTTP-flooding as
 7. docker cp /hostfile  (container_id):/(to_the_place_you_want_the_file_to_be)
 8. docker exec -it container-id-curl-http3 bash
 
-After the bash connection to the docker, execute ./http-flood.sh.
+After the bash connection to the docker, execute ./http3-flood.sh.
 
 **Based on the work: Chatzoglou.E, Kouliaridis V., Kambourakis G., Karopoulos G., and Gritzalis S.**, ["A hands-on gaze on HTTP/3 security through the lens of HTTP/2 and a public dataset"](https://doi.org/10.48550/arXiv.2208.06722) **in arXiv, doi:10.48550/arXiv.2208.06722**.
 
