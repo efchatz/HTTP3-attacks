@@ -1,6 +1,6 @@
 # HTTP3-attacks (CVE-2022-30592)
 
-The current repository serves the purpose of sharing the scripts we used for educational usage. These attacks were a part of our study, and were tested against 6 different QUIC-enabled servers (IIS, NGINX, LiteSpeed, Cloudflare, H2O, and Caddy). The http-stream script is the exploit of the [CVE-2022-30592](https://nvd.nist.gov/vuln/detail/CVE-2022-30592) issue that affected lsquic library. This script can also be exploited against Litespeed server.
+The current repository serves the purpose of sharing the scripts we used for educational usage. These attacks were a part of our study, and were tested against 6 different QUIC-enabled servers (IIS, NGINX, LiteSpeed, Cloudflare, H2O, and Caddy) that were configured to communicate with HTTP/3. The http-stream script is the exploit of the [CVE-2022-30592](https://nvd.nist.gov/vuln/detail/CVE-2022-30592) issue that affected lsquic library. This script can also be exploited against Litespeed server.
 
 ## Installation procedure
 For the exploitation of these attacks, the Ubuntu 18.04 client was used, with the assist of aioquic Python library for HTTP3-loris and HTTP3-stream. For HTTP3-flooding attack, the curl tool was used, with support of HTTP/3. The following instructions occur the aioquic installation, for the HTTP3-loris and HTTP3-stream assaults.
