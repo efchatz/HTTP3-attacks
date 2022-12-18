@@ -1,6 +1,6 @@
 # HTTP3-attacks (CVE-2022-30592)
 
-**Based on the work: Chatzoglou.E, Kouliaridis V., Kambourakis G., Karopoulos G., and Gritzalis S.**, ["A hands-on gaze on HTTP/3 security through the lens of HTTP/2 and a public dataset"](https://doi.org/10.48550/arXiv.2208.06722) **in arXiv, doi:10.48550/arXiv.2208.06722**.
+**Based on the work: E. Chatzoglou, V. Kouliaridis, G. Kambourakis, G. Karopoulos, and S. Gritzalis, ["A hands-on gaze on http/3 security through the lens of http/2 and a public dataset",](https://www.sciencedirect.com/science/article/pii/S0167404822004436) Computers & Security, p. 103051, 2022.**
 
 The current repository serves the purpose of sharing the scripts we used for educational usage. These attacks were a part of our study, and were tested against 6 different QUIC-enabled servers (IIS, NGINX, LiteSpeed, Cloudflare, H2O, and Caddy) that were configured to communicate with HTTP/3. The http-stream script is the exploit of the [CVE-2022-30592](https://nvd.nist.gov/vuln/detail/CVE-2022-30592) issue that affected lsquic library. This script can also be exploited against Litespeed server.
 
